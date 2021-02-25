@@ -1,0 +1,14 @@
+{
+  "name": "s3-static-file",
+  "version": "1.0.0",
+  "description": "s3 website test",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specifiedi\" && exit 1"
+  },
+  "author": "corhyam",
+  "license": "MIT",
+  "dependencies": {
+    "serverless-finch": "^1.1.1"
+  }
+}
