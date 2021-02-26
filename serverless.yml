@@ -4,6 +4,7 @@ service: s3-static-file
 plugins:
   - serverless-finch
 
+
 custom:
   client:
     bucketName: ccorhyam.xyz
