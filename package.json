@@ -4,7 +4,8 @@
   "description": "s3 website test",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"Error: no test specifiedi\" && exit 1"
+    "test": "echo \"Error: no test specifiedi\" && exit 1",
+    "docs": "docsify serve client/dist/docs"
   },
   "author": "corhyam",
   "license": "MIT",
