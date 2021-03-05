@@ -3,7 +3,7 @@ service: s3-static-file
 
 plugins:
   - serverless-finch
-
+#client 网站部署plugins
 
 custom:
   client:
