@@ -22,8 +22,8 @@ provider:
   lambdaHashingVersion: 20201221
 
 functions:
-  hello:
-    handler: handler.hello
+  hello-test:
+    handler: handler.test
 
 # you can overwrite defaults here
 #  stage: dev
