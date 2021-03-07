@@ -5,7 +5,8 @@
   "main": "handler.js",
   "scripts": {
     "test": "echo \"Error: no test specifiedi\" && exit 1",
-    "docs": "docsify serve client/dist/docs"
+    "docs": "docsify serve client/dist",
+    "build": "npm install"
   },
   "author": "corhyam",
   "license": "MIT",
