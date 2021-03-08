@@ -1,0 +1,11 @@
+{
+  "name": "auth0-frontend",
+  "version": "1.0.0",
+  "description": "Demonstration of protecting API gateway endpoints with auth0",
+  "license": "MIT",
+  "dependencies": {
+    "auth0-lock": "^11.28.1",
+    "jsonwebtoken": "^7.1.9",
+    "serverless-finch": "^1.2.2"
+  }
+}

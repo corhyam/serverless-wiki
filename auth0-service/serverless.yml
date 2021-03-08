@@ -1,0 +1,47 @@
+
+service: auth0-service
+
+plugins:
+  - serverless-finch
+
+custom:
+  client:
+    bucketName: auth0.corhyam.xyz
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:    #auth 用于对用户传过来的 Token 进行校验
+  auth:
+    handler: handler.auth
+    environment:
+      AUTH0_ID: ${file(./config.yml):AUTH0_ID}
+      AUTH0_SECRET: ${file(./config.yml):AUTH0_SECRET}
+
+  publicEndpoint:  # 公开的 API 结点
+    handler: handler.publicEndpoint
+    events:
+      - http:
+          path: api/public
+          method: get
+          integration: lambda
+          cors: true
+
+  privateEndpoint:  # 需授权才能访问的 API，即它将调用 auth 函数，根据授权结果来返回相应的内容。
+    handler: handler.privateEndpoint
+    events:
+      - http:
+          path: api/private
+          method: get
+          integration: lambda
+          authorizer: auth # See custom authorizer docs here: http://bit.ly/2gXw9pO
+          cors:
+            origins:
+              - '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token

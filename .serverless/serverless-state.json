@@ -85,10 +85,10 @@
               }
             }
           },
-          "HelloLogGroup": {
+          "HelloDashtestLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/s3-static-file-dev-hello"
+              "LogGroupName": "/aws/lambda/s3-static-file-dev-hello-test"
             }
           },
           "IamRoleLambdaExecution": {
@@ -168,18 +168,18 @@
               }
             }
           },
-          "HelloLambdaFunction": {
+          "HelloDashtestLambdaFunction": {
             "Type": "AWS::Lambda::Function",
             "Properties": {
               "Code": {
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/s3-static-file/dev/1614311005063-2021-02-26T03:43:25.063Z/s3-static-file.zip"
+                "S3Key": "serverless/s3-static-file/dev/1614922766055-2021-03-05T05:39:26.055Z/s3-static-file.zip"
               },
-              "Handler": "handler.hello",
+              "Handler": "handler.test",
               "Runtime": "nodejs12.x",
-              "FunctionName": "s3-static-file-dev-hello",
+              "FunctionName": "s3-static-file-dev-hello-test",
               "MemorySize": 1024,
               "Timeout": 6,
               "Role": {
@@ -190,17 +190,17 @@
               }
             },
             "DependsOn": [
-              "HelloLogGroup"
+              "HelloDashtestLogGroup"
             ]
           },
-          "HelloLambdaVersionIOScBzgM1fHZZk4bwWJHuarP3GJcCTzflaoeDSwdsOc": {
+          "HelloDashtestLambdaVersionsoNCn4BE0tB8oTZiPQJ1XVYBGRRnPIDAjpYGFTVbe0": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
-                "Ref": "HelloLambdaFunction"
+                "Ref": "HelloDashtestLambdaFunction"
               },
-              "CodeSha256": "lydp3sNtD+HSE1UGxkQzS8+RHwUqXDAc874t5CKhUVQ="
+              "CodeSha256": "8CaTuCx/XbPT+gpI942K0dtFTsx+yDbyUZTC7/lXRJ4="
             }
           }
         },
@@ -210,10 +210,10 @@
               "Ref": "ServerlessDeploymentBucket"
             }
           },
-          "HelloLambdaFunctionQualifiedArn": {
+          "HelloDashtestLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "HelloLambdaVersionIOScBzgM1fHZZk4bwWJHuarP3GJcCTzflaoeDSwdsOc"
+              "Ref": "HelloDashtestLambdaVersionsoNCn4BE0tB8oTZiPQJ1XVYBGRRnPIDAjpYGFTVbe0"
             }
           }
         }
@@ -312,16 +312,16 @@
     ],
     "pluginsData": {},
     "functions": {
-      "hello": {
-        "handler": "handler.hello",
+      "hello-test": {
+        "handler": "handler.test",
         "events": [],
-        "name": "s3-static-file-dev-hello",
+        "name": "s3-static-file-dev-hello-test",
         "package": {},
         "memory": 1024,
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "HelloLambdaVersionIOScBzgM1fHZZk4bwWJHuarP3GJcCTzflaoeDSwdsOc"
+        "versionLogicalId": "HelloDashtestLambdaVersionsoNCn4BE0tB8oTZiPQJ1XVYBGRRnPIDAjpYGFTVbe0"
       }
     },
     "configValidationMode": "warn",
@@ -349,7 +349,7 @@
     "artifact": "/Users/corhyam/finalDesign/s3-website/.serverless/s3-static-file.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/s3-static-file/dev/1614311005063-2021-02-26T03:43:25.063Z",
+    "artifactDirectoryName": "serverless/s3-static-file/dev/1614922766055-2021-03-05T05:39:26.055Z",
     "artifact": "s3-static-file.zip"
   }
 }
