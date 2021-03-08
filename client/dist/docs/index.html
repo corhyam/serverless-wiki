@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <!-- theme -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
 </head>
 <body>
   <div id="app"></div>
@@ -27,9 +28,23 @@
         '/.*/_sidebar.md': '/_sidebar.md'
       }
 
-
     }
   </script>
+
+  <script>
+    const gitalk = new Gitalk({
+      clientID: 'af5a82a799c834a467cc',
+      clientSecret: '99ab4f5e3448292c78965a410b9c4fc9f0d181c3',
+      repo: 'https://github.com/corhyam',
+      owner: 'Corhyam',
+      admin: ['Corhyam'],
+      // facebook-like distraction free mode
+      distractionFreeMode: false
+    })
+  </script>
+
+  <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script><!--gittalk评论系统js-->
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script><!--add Copy to Clipboard添加复制到剪贴板-->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script><!--点击图片放大缩小-->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script> <!--引入搜索栏js-->
