@@ -11,5 +11,7 @@
     <orderEntry type="library" name="prism-php" level="application" />
     <orderEntry type="library" name="docsify" level="application" />
     <orderEntry type="library" name="search" level="application" />
+    <orderEntry type="library" name="gitalk" level="application" />
+    <orderEntry type="library" name="vue" level="application" />
   </component>
 </module>
