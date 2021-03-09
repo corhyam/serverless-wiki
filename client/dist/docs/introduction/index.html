@@ -8,6 +8,8 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <!-- theme -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+
+
 </head>
 <body>
   <div id="app"></div>
@@ -27,9 +29,26 @@
         '/.*/_sidebar.md': '/_sidebar.md'
       }
 
-
     }
   </script>
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>  <!--rel src这几个记得要写在body内，并且要放在该<script>以上 否则会出现gitalk no defined的报错-->
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '251a34f95d41abce549d',
+      clientSecret: '550e5ad61b4758b8c0f2207382bdffd334bcbdfb',
+      repo: 's3-website',
+      owner: 'corhyam',
+      admin: ['corhyam'],
+      // facebook-like distraction free mode
+      distractionFreeMode: false
+    })
+  </script>
+
+
+
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script><!--add Copy to Clipboard添加复制到剪贴板-->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script><!--点击图片放大缩小-->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script> <!--引入搜索栏js-->
