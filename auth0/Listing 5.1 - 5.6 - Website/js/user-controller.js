@@ -1,15 +1,16 @@
-var userController = {      /*初始化auth0 lock，关联点击事件并把jwt保存到本地存储中，然后把它包含到每次请求的authorization标头中*/
-  data: {
-    auth0Lock: null,
-    config: null
-  },
-  uiElements: {
-    loginButton: null,
-    logoutButton: null,
-    profileButton: null,
-    profileNameLabel: null,
-    profileImage: null
-  },
+    /*初始化auth0 lock，关联点击事件并把jwt保存到本地存储中，然后把它包含到每次请求的authorization标头中*/
+  window.userController = {
+    data: {
+      auth0Lock: null,
+      config: null
+    },
+    uiElements: {
+      loginButton: null,
+      logoutButton: null,
+      profileButton: null,
+      profileNameLabel: null,
+      profileImage: null
+    },
   init: function(config) {
     var that = this;
 
