@@ -6,6 +6,11 @@
   "dependencies": {
     "auth0-lock": "^11.28.1",
     "jsonwebtoken": "^7.1.9",
+    "local-web-server": "^4.2.1",
     "serverless-finch": "^1.2.2"
+  },
+  "scripts": {
+    "start": "ws",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

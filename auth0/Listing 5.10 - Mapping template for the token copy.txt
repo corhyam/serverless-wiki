@@ -1,3 +1,0 @@
-{
-    "authToken" : "$input.params('Authorization')" 
-}
