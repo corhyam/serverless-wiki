@@ -1,0 +1,46 @@
+
+service: auth0-frontend-service
+
+plugins:
+  - serverless-finch
+
+custom:
+  client:
+    bucketName: auth0.corhyam.xyz
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  auth:
+    handler: handler.auth
+    environment:
+      AUTH0_ID: ${file(./config.yml):AUTH0_ID}
+      AUTH0_SECRET: ${file(./config.yml):AUTH0_SECRET}
+
+  publicEndpoint:
+    handler: handler.publicEndpoint
+    events:
+      - http:
+          path: api/public
+          method: get
+          integration: lambda
+          cors: true
+  privateEndpoint:
+    handler: handler.privateEndpoint
+    events:
+      - http:
+          path: api/private
+          method: get
+          integration: lambda
+          authorizer: auth # See custom authorizer docs here: http://bit.ly/2gXw9pO
+          cors:
+            origins:
+              - '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token

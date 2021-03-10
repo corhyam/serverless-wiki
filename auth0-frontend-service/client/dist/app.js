@@ -3,12 +3,13 @@
 // Fill in with your values
 const AUTH0_CLIENT_ID = 'o1EOkablAkt1UrOvkvALQCW4xVrHJ4hv';
 const AUTH0_DOMAIN = 'corhyam.jp.auth0.com';
-/*const AUTH0_CALLBACK_URL = window.location.href;*/
-const PUBLIC_ENDPOINT = 'https://p9f8ud460c.execute-api.us-east-1.amazonaws.com/dev/api/public';
-const PRIVATE_ENDPOINT = 'https://p9f8ud460c.execute-api.us-east-1.amazonaws.com/dev/api/private';
+const AUTH0_CALLBACK_URL = window.location.href; // eslint-disable-line
+const PUBLIC_ENDPOINT = 'https://obt1kbvvxf.execute-api.us-east-1.amazonaws.com/dev/api/public';
+const PRIVATE_ENDPOINT = 'https://obt1kbvvxf.execute-api.us-east-1.amazonaws.com/dev/api/private';
+/*ServiceEndpoint: https://obt1kbvvxf.execute-api.us-east-1.amazonaws.com/dev*/
 
 // initialize auth0 lock
-const lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN); // create object
+const lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN); // eslint-disable-line
 
 const jwtToken = localStorage.getItem('userToken');
 if (jwtToken) {
@@ -20,13 +21,13 @@ if (jwtToken) {
 
 // Handle login
 document.getElementById('btn-login').addEventListener('click', () => {
-  lock.show((err, profile, token) => {                    // lock.show 方法将调出 Auth0 的登录页面
+  lock.show((err, profile, token) => {
     if (err) {
       // Error callback
       console.error('Something went wrong: ', err);
-      alert('Something went wrong, check the Console errors');
+      alert('Something went wrong, check the Console errors'); // eslint-disable-line no-alert
     } else {
-      // Success callback
+      // Success calback
       console.log(token);
 
       // Save the JWT token.
@@ -79,7 +80,7 @@ document.getElementById('btn-private').addEventListener('click', () => {
   }
   const getdata = fetch(PRIVATE_ENDPOINT, {
     headers: {
-      Authorization: `Bearer ${token}`, //借口认证方式，token必须使用 Bearer Token（Token 令牌） 方式，使用该方式头部会多一个 authorization
+      Authorization: `Bearer ${token}`,
     },
     method: 'GET',
     cache: 'no-store',
