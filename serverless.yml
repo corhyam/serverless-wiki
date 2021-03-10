@@ -7,7 +7,7 @@ plugins:
 
 custom:
   client:
-    bucketName: ccorhyam.xyz
+    bucketName: corhyam.xyz
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
 #org: your-org-name

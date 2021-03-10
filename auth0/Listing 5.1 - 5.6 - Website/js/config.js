@@ -1,7 +1,7 @@
 var configConstants = {
 	auth0: {
-		domain: 'AUTH0-DOMAIN',
-		clientId: 'AUTH0-CLIENTID'
+		domain: 'corhyam.jp.auth0.com',
+		clientId: 'VmcELwLZiva0YDmspxAgDwzCTieSydAN'
 	},
   apiBaseUrl: 'https://API-GATEWAY-URL/dev'
 };

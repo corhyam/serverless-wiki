@@ -1,13 +1,5 @@
-/**
- * Created by Peter Sbarski
- * Serverless Architectures on AWS
- * http://book.acloud.guru/
- * Last Updated: Feb 11, 2017
- */
-
-
 (function(){
 	$(document).ready(function(){
-		userController.init(configConstants);
+		userController.init(configConstants);//运行userController.init函数关联事件，设置auth0
 	});
 }());
