@@ -65,13 +65,82 @@
     }
     this.wireEvents();
   },*/
-  configureAuthenticatedRequests: function() {//将令牌包含到每次请求的Authorization标头中
+
+    configureAuthenticatedRequests() {
+      $.ajaxSetup({
+        beforeSend(xhr) {
+          xhr.setRequestHeader(
+              "Authorization",
+              "Bearer " + localStorage.getItem("userToken")
+          );
+        }
+      });
+    },
+/*  configureAuthenticatedRequests: function() {//将令牌包含到每次请求的Authorization标头中
     $.ajaxSetup({
       'beforeSend': function(xhr) {
         xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem('userToken'));
       }
     });
-  },
+  },*/
+    showUserAuthenticationDetails(profile) {
+      const showAuthenticationElements = !!profile;
+
+      if (showAuthenticationElements) {
+        const { profileNameLabel, profileImage } = this.uiElements;
+        profileNameLabel.text(profile.nickname);
+        profileImage.attr("src", profile.picture);
+      }
+
+      {
+        const { loginButton, logoutButton, profileButton } = this.uiElements;
+        loginButton.toggle(!showAuthenticationElements);
+        logoutButton.toggle(showAuthenticationElements);
+        profileButton.toggle(showAuthenticationElements);
+      }
+    },
+
+    wireEvents() {
+      const { auth0Lock, config } = this.data;
+
+      auth0Lock.on("authenticated", ({ accessToken }) =>
+          auth0Lock.getUserInfo(accessToken, (error, profile) => {
+            auth0Lock.hide();
+            if (error) return alert("Auth0 error:" + error);
+
+            localStorage.setItem("userToken", accessToken);//将jwt令牌保存到浏览器的localStorage中
+            this.configureAuthenticatedRequests();
+            this.showUserAuthenticationDetails(profile);
+          })
+      );
+
+      {
+        const { loginButton, logoutButton, profileButton } = this.uiElements;
+
+        loginButton.click(() =>
+            auth0Lock.show({ auth: { params: { scope: "openid profile" } } })//auth0 lock界面
+        );
+
+        logoutButton.click(() => {
+          localStorage.removeItem("userToken");//click移除令牌
+          logoutButton.hide();//隐藏logout
+          profileButton.hide();//隐藏profile
+          loginButton.show();//显示login
+          auth0Lock.logout({ returnTo: "http://127.0.0.1:8100" });
+        });
+
+        profileButton.click(() => {
+          const url = config.apiBaseUrl + "/user-profile";
+          $.get(url, data => {
+            $("#user-profile-raw-json").text(JSON.stringify(data, null, 2));
+            $("#user-profile-modal").modal();
+          });
+        });
+      }
+    }
+  };
+
+ /*
   showUserAuthenticationDetails: function(profile) {
     var showAuthenticationElements = !!profile;
 
@@ -125,3 +194,4 @@
     });
   }
 }
+*/
