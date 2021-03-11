@@ -11,20 +11,49 @@
       profileNameLabel: null,
       profileImage: null
     },
-  init: function(config) {
-    var that = this;
+    init(config) {
+      {
+        const { uiElements } = this;
+        uiElements.loginButton = $("#auth0-login");
+        uiElements.logoutButton = $("#auth0-logout");
+        uiElements.profileButton = $("#user-profile");
+        uiElements.profileNameLabel = $("#profilename");
+        uiElements.profileImage = $("#profilepicture");
+      }
 
+      {
+        const { data } = this;
+        data.config = config;
+        data.auth0Lock = new Auth0Lock(
+            config.auth0.clientId,
+            config.auth0.domain
+        );
+      }
+
+      {
+        const accessToken = localStorage.getItem("userToken");
+        if (accessToken) {
+          this.configureAuthenticatedRequests();
+          this.data.auth0Lock.getUserInfo(accessToken, (error, profile) => {
+            if (error) return alert("Auth0 error: " + error.message);
+            this.showUserAuthenticationDetails(profile);
+          });
+        }
+      }
+
+      this.wireEvents();
+    },
+/*  init: function(config) {       这个语法不对 弃用了好像 一直报错
+    var that = this;
     this.uiElements.loginButton = $('#auth0-login');
     this.uiElements.logoutButton = $('#auth0-logout');
     this.uiElements.profileButton = $('#user-profile');
     this.uiElements.profileNameLabel = $('#profilename');
     this.uiElements.profileImage = $('#profilepicture');
-
-    this.data.config = config;  /*config.js里面配置auth0客户端的id以及domain*/
+    this.data.config = config;  /!*config.js里面配置auth0客户端的id以及domain*!/
     this.data.auth0Lock = new Auth0Lock(config.auth0.clientId, config.auth0.domain);
 
     var idToken = localStorage.getItem('userToken');
-
     if (idToken) {
       this.configureAuthenticatedRequests();
       this.data.auth0Lock.getProfile(idToken, function(err, profile) { //如果用户令牌已存在，可以从auth0中获取用户信息
@@ -34,9 +63,8 @@
         that.showUserAuthenticationDetails(profile);
       });
     }
-
     this.wireEvents();
-  },
+  },*/
   configureAuthenticatedRequests: function() {//将令牌包含到每次请求的Authorization标头中
     $.ajaxSetup({
       'beforeSend': function(xhr) {
