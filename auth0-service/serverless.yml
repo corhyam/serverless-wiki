@@ -35,7 +35,7 @@ functions:    #auth 用于对用户传过来的 Token 进行校验
           path: api/private
           method: get
           integration: lambda
-          authorizer: auth # See custom authorizer docs here: http://bit.ly/2gXw9pO
+          authorizer: auth
           cors:
             origins:
               - '*'
