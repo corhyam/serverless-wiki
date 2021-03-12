@@ -1,0 +1,17 @@
+{
+  "name": "user-profile",
+  "version": "1.0.0",
+  "description": "This Lambda function returns the current user-profile",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "aws lambda update-function-code --function-name user-profile --zip-file fileb://Lambda-Deployment.zip",
+    "predeploy": "zip -r Lambda-Deployment.zip * -x *.zip *.json *.log"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^5.7.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "run-local-lambda": "^1.0.0"
+  }
+}
