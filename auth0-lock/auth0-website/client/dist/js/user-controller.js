@@ -129,7 +129,7 @@
           auth0Lock.logout({ returnTo: "http://127.0.0.1:8100" });
         });
 
-        profileButton.click(() => {
+        profileButton.click(() => {  //show profile点击事件处理
           const url = config.apiBaseUrl + "/user-profile";
           $.get(url, data => {
             $("#user-profile-raw-json").text(JSON.stringify(data, null, 2));
