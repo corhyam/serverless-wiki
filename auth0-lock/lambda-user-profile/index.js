@@ -6,7 +6,7 @@ var jwt = require('jsonwebtoken');
 var request = require('request');
 
 exports.handler = function(event, context, callback){
-    if (!event.authToken) {
+    if (!event.authToken) {        //由网站通过authorization标头传入的jwt令牌
     	callback('Could not find authToken');
     	return;
     }

@@ -29,7 +29,7 @@ exports.handler = function(event, context, callback){
     var token = event.authorizationToken.split(' ')[1];
 
     var secretBuffer = new Buffer(process.env.AUTH0_SECRET);//可以通过环境变量获取 在lambda里面配了
-    jwt.verify(token, secretBuffer, function(err, decoded){//根据 AUTH0 的 ID 和密钥来校验 token 是否是有效
+    jwt.verify(token, secretBuffer, {algorithm: 'RS256'},function(err, decoded){//根据 AUTH0 的 ID 和密钥来校验 token 是否是有效
     	if(err){
     		console.log('Failed jwt verification: ', err, 'auth: ', event.authorizationToken);
     		callback('Authorization Failed');
