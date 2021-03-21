@@ -1,12 +1,12 @@
 
-![logo](https://docsify.js.org/_media/icon.svg)
+![logo](_image/alicloud.jpeg)
 
-#  Corhyam's Wiki
+#  阿里云学习内容
 
-> 一个基于Serverless架构的个人wiki
+> Alibaba cloud服务学习
 
-- Serverless Framework
-- AWS S3，AWS Lambda，AWS Cloudformation，
+- 计算，存储，数据库，DataV
+- 域名备案，阿里邮箱
 - 阿里云 DNS云解析
 
 [GitHub](https://github.com/corhyam)
