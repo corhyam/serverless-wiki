@@ -1,5 +1,5 @@
 //这个js主也要负责令牌的校验和解码，成功则向auth0提供的userinfo endpoint发送请求。
-// jwt也包含在请求中，userinfo返回用户信息，发回网站。大致思路 okeninfo弃用了
+// jwt也包含在请求中，userinfo返回用户信息，发回网站。大致思路 auth0旧的Tokeninfo弃用了
 'use strict';
 
 var jwt = require('jsonwebtoken');
