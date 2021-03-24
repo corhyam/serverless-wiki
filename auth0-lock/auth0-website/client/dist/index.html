@@ -47,11 +47,10 @@
           <button id="auth0-logout" class="btn btn-success">Sign Out</button>    <!--触发usercontroller.js里的点击事件-->
         </div>
       </div>
-      <!--/.navbar-collapse -->
+
     </div>
   </nav>
 
-  <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
       <h1>Hello, world!</h1>
@@ -96,7 +95,7 @@
           <h4 class="modal-title">User Profile Information (from Auth0 via Lambda)</h4>
         </div>
         <div class="modal-body">
-          <b>Raw JSON from Auth0:</b>
+          <b>User-profile JSON from Auth0:</b>
           <pre id="user-profile-raw-json"></pre>
         </div>
         <div class="modal-footer">
@@ -109,15 +108,17 @@
   </div>
   <!-- /.modal -->
 
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!--
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
   <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
   </script>
 
   <script src="js/vendor/bootstrap.min.js"></script>
 <!--  <script src="https://cdn.auth0.com/js/lock-9.min.js"></script>　&lt;!&ndash;auth0 lock js&ndash;&gt;-->
-  <script src="https://cdn.auth0.com/js/lock/11.2/lock.min.js"></script>
+  <!--9.0的已经过时了 使用不了-->
+<!--  <script src="https://cdn.auth0.com/js/lock/11.2/lock.min.js"></script>-->
+  <script src="js/lock.min.js"></script>
 
   <script src="js/user-controller.js"></script>
   <script src="js/config.js"></script>
