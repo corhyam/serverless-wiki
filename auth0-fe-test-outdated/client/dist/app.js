@@ -1,12 +1,11 @@
 /* global window document localStorage fetch alert */
 
-// Fill in with your values
-const AUTH0_CLIENT_ID = 'o1EOkablAkt1UrOvkvALQCW4xVrHJ4hv';
+//测试用
+const AUTH0_CLIENT_ID = 'client id';
 const AUTH0_DOMAIN = 'corhyam.jp.auth0.com';
 const AUTH0_CALLBACK_URL = window.location.href; // eslint-disable-line
-const PUBLIC_ENDPOINT = 'https://obt1kbvvxf.execute-api.us-east-1.amazonaws.com/dev/api/public';
-const PRIVATE_ENDPOINT = 'https://obt1kbvvxf.execute-api.us-east-1.amazonaws.com/dev/api/private';
-/*ServiceEndpoint: https://obt1kbvvxf.execute-api.us-east-1.amazonaws.com/dev*/
+const PUBLIC_ENDPOINT = 'https://(yourapi)/public';
+const PRIVATE_ENDPOINT = 'https://(yourapi)/private';
 
 // initialize auth0 lock
 const lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN); // eslint-disable-line

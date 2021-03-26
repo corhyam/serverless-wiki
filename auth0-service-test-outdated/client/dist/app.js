@@ -1,11 +1,11 @@
 /* global window document localStorage fetch alert */
 
 // Fill in with your values
-const AUTH0_CLIENT_ID = 'o1EOkablAkt1UrOvkvALQCW4xVrHJ4hv';
+const AUTH0_CLIENT_ID = 'client id';
 const AUTH0_DOMAIN = 'corhyam.jp.auth0.com';
 /*const AUTH0_CALLBACK_URL = window.location.href;*/
-const PUBLIC_ENDPOINT = 'https://p9f8ud460c.execute-api.us-east-1.amazonaws.com/dev/api/public';
-const PRIVATE_ENDPOINT = 'https://p9f8ud460c.execute-api.us-east-1.amazonaws.com/dev/api/private';
+const PUBLIC_ENDPOINT = 'https://(yourapi)/public';
+const PRIVATE_ENDPOINT = 'https://(yourapi)/private';
 
 // initialize auth0 lock
 const lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN); // create object
