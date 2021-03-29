@@ -7,7 +7,7 @@
 **由于对云计算层面比较感兴趣，许多新兴技术应运而生。在接触到AWS Lambda与阿里云函数计算时，感觉Serverless技术较为有趣，故想尝试着搭建一些简单的Demo做做尝试。
 初次接触Serverless架构，架构的简单想法如下。**
 
-![architect p](_images/architeture.png)
+![architect pic](_images/serverless-architecture-version2.png)
 
 
 **如今资历尚浅，仍在不断充实自己。在搭建这个简单wiki系统后，个人鄙见，感觉Serverless架构感觉落地仍需要一些时间，也常能在论坛中看到使用者诟病冷启动等等问题，在此次编写简单lambda函数时也感觉略微繁琐。**
