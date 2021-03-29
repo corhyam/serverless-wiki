@@ -7,6 +7,10 @@
   - [为什么选择docsify](whyichooseit.md)
   - [初始化](init.md)
   - [多页文档](multipage.md)
+- 实现过程
+  - [使用Docker安装Jenkins](jenkins.md)
+  - [Jenkins实现静态文件CI/CD](jenkins-cicd.md)
+
 - Auth0的踩坑经历
   - [OIDC与OAUTH2.0](oidcAndOAuth.md)
   - [Auth0是什么](whatisAuth0.md)
