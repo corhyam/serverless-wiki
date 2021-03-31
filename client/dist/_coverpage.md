@@ -1,5 +1,5 @@
 
-![logo](https://docsify.js.org/_media/icon.svg)
+![logo](_icon/icon2.svg)
 
 #  Corhyam's Wiki
 
