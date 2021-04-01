@@ -11,7 +11,7 @@
   - [Jenkins-Github自动部署](jenkins-github.md)
   
 - 实现过程
-  - [实现过程问题自述](implement-problem.md)
+  <!-- - [实现过程问题自述](implement-problem.md)-->
   - [Docsify文档构建](docsify-build.md)
   - [Serverless Framework安装调试](serverless-install.md)
   - [Serverless Framework部署云上资源](serverless-deploy.md)
