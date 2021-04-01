@@ -1,5 +1,5 @@
 - [:memo:主页](/)
 - :memo:其他笔记
-   - [AWS](docs/aws/)
-   - [阿里云](docs/alicloud/)
+   - [AWS]<!--(docs/aws/)-->
+   - [阿里云]<!--(docs/alicloud/)-->
    - [未整理笔记](docs/unclassified/)

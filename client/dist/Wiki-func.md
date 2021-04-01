@@ -1,3 +1,64 @@
+## 文档目前大致树状图
+
+```
+├── _icon
+│   ├── cc.png
+│   ├── ..jpg
+├── _images
+│   ├── acloud-guru.png
+│   ├── ............
+│   └── serverless-spa-architecture.png
+├── _navbar.md
+├── _sidebar.md
+│   ├── _images
+│   │   └── deploy-github-pages.png
+│   ├── alicloud
+│   │   ├── README.md
+│   │   ├── _coverpage.md
+│   │   ├── _image
+│   │   │   └── alicloud.jpeg
+│   │   ├── _sidebar.md
+│   │   └── index.html
+│   ├── aws
+│   │   ├── README.md
+│   │   ├── _coverpage.md
+│   │   ├── _image
+│   │   │   └── lambda.png
+│   │   ├── _sidebar.md
+│   │   └── index.html
+│   ├── library
+│   │   └── gitalk.min.js
+│   └── unclassified
+│       ├── README.md
+│       ├── _coverpage.md
+│       ├── _images
+│       │   ├── 1D52FDFA-AD28-4459-B252-7A89D890E21A.png
+│       │   ├── ...................
+│       │   └── image-20210330184514594.png
+│       ├── _sidebar.md
+│       └── index.html
+├── docsify-build.md
+├── index.html
+├── init.md
+├── interview.md
+├── jenkins-cicd.md
+├── jenkins-github.md
+├── jenkins.md
+├── library
+│   └── gitalk.min.js
+├── merit.md
+├──..................
+
+```
+
+> 截取部分文档树状图，详细可查看源码列表。[文件以及文件夹内容解释可在实现过程中查看（点击跳转）](docsify-build.md)
+
+
+
+---
+
+
+
 ## 文档系统封面_coverpage
 
 ![image-20210331165341889](_images/image-20210331165341889.png)
@@ -5,8 +66,6 @@
 >封面个人文档内容简介，Github跳转按钮，以及文档Get Started按钮，点击后跳转至README.md
 
 ---
-
-
 
 ## 搜索栏_search.min.js
 
