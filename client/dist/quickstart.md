@@ -10,10 +10,10 @@ npm i docsify-cli -g
 
 
 
-**项目初始化**
+项目初始化
 
 ```bash
-docsify init ./docs
+docsify init client/dist
 ```
 
 **文件路径`./docs`可以根据你自己的选择做修改**
@@ -39,20 +39,201 @@ docsify init ./docs
 使用`docsify serve`启动本地服务器实现预览
 
 ```bash
-docsify serve docs
+docsify serve client/dist
 ```
 
 ---
 
 
 
-## Serverless Framework
+## 安装Serverless Framework
 
-> 本文主要展示为使用Serverless Framework部署docsify至AWS。其余云平台如何配置可以根据[Serverless官网](https://www.serverless.com/)中的文档进行修改。由于国内Serverless Framework与腾讯云
+> **本文主要展示为使用Serverless Framework部署docsify至`AWS`。**
+
+!> 其余云平台如何配置可以根据[Serverless官网](https://www.serverless.com/)中的文档进行修改。由于国内Serverless Framework与`腾讯云`之间有合作，并且时区不同，所以Serverless Framework安装之后默认是使用腾讯云的，**如果有腾讯云账号，腾讯云有一个解决方案是使用Serverless Component，使用component腾讯云是能够最快实现部署的，不需要做其他的配置，编写Serverless.yml即可立即部署。**
+
+?> 由于在国内Serverless Framework文档较少，google也翻不到，在想要配置默认提供商为AWS，以及配置AWS凭证时便碰了几次壁。跑到stack overflow寻找，询问Serverless平台中的人才得以解决。
+
+---
+
+
 
 **安装Serverless Framework**
 
 ```bash
 npm install -g serverless
 ```
+
+**修改默认提供商(重要)**
+
+> 不修改平台提供商则默认时`腾讯云`，某些命令反馈的情况也不相同。
+
+ **修改环境变量**
+
+```bash
+vim ~/.bash_profile
+```
+
+**将下方环境变量配置添加到`.bash_profile`中**
+
+```shell
+export SERVERLESS_PLATFORM_VENDOR=aws
+```
+
+`:wq`保存之后输入下方命令使其生效
+
+```shell
+source ~/.bash_profile
+```
+
+查看版本
+
+```bash
+serverless -v
+```
+
+---
+
+
+
+## 设置AWS凭证
+
+### 配置凭证之前，需要先在AWS IAM（Identity & Access Management）中创建对应的用户，附加需要的策略后创建，并妥善保存您自己的密钥对。
+
+官方的示例如下：
+
+```bash
+serverless config credentials --provider aws --key <your-key> --secret <your-secret-key>
+```
+
+又或者如我的做法，直接在` ~/.aws/credentials`中配置( 不存在则手动创建 )
+
+```bash
+vim ~/.aws/credentials
+```
+
+```
+[default]
+aws_access_key_id=<your-access-key>
+aws_secret_access_key=<your-secret-key>
+aws_session_token=FwoGZXIvYXdzEHQaDO3UKi03vjqW71YdlyLCARsCGafzixZWyZrZe/FmwC/SnHT0JlRr5UvLJGqltsP15zjT5wxNlN49TKabfhsBBp5GzseGH+G64r9+t**********
+~                                                                               
+~                                                                                                                                                                                                                                           
+"~/.aws/credentials" [noeol] 4L, 498C
+```
+
+!> **由于此处本人的AWS账号为AWS educate账号，提供的是临时凭证，需要有session_token。**
+
+!> **所以建议在IAM中创建AWS用户，附加需要的策略，创建用户后保存对应的AK/SK**
+
+
+
+---
+
+## 使用Serverless finch部署docsify
+
+安装`Serverless finch`
+
+```bash
+npm install --save serverless-finch
+```
+
+> serverless-finch可以用作静态网站部署，运行`serverless client deploy`命令后会部署client/dist里面的内容至存储桶。
+
+创建serverless.yml
+
+```bash
+touch serverless.yml
+```
+
+将以下内容填入到serverless.yml中
+
+```
+service: docsify-test
+
+plugins:
+  - serverless-finch
+#client 网站部署plugins
+
+custom:
+  client:
+    bucketName: serverless-aws-docsify
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+```
+
+> **其中`service`为服务名，`bucketName`根据自己的需求进行修改**
+
+最后，部署docsify
+
+```bash
+serverless client deploy
+```
+
+即可部署至aws s3存储桶中，返回的域名即为静态网站托管的域名。
+
+---
+
+---
+
+---
+
+
+
+## 实操
+
+**配置好对应凭证之后，部署全过程命令以及部署全过程日志如下：**
+
+```shell
+corhyam@Ccc-MacBook-Pro aws-serverless-docsify % ls
+corhyam@Ccc-MacBook-Pro aws-serverless-docsify % docsify init client/dist
+
+Initialization succeeded! Please run docsify serve client/dist
+
+corhyam@Ccc-MacBook-Pro aws-serverless-docsify % docsify serve client/dist
+
+Serving /Users/corhyam/aws-serverless-docsify/client/dist now.
+Listening at http://localhost:55627
+
+^C
+corhyam@Ccc-MacBook-Pro aws-serverless-docsify % npm install --save serverless-finch
+
+up to date, audited 125 packages in 2s
+
+found 0 vulnerabilities
+corhyam@Ccc-MacBook-Pro aws-serverless-docsify % touch serverless.yml
+corhyam@Ccc-MacBook-Pro aws-serverless-docsify % vim serverless.yml
+corhyam@Ccc-MacBook-Pro aws-serverless-docsify % serverless client deploy
+Serverless: This deployment will:
+Serverless: - Upload all files from 'client/dist' to bucket 'serverless-aws-docsify'
+Serverless: - Set (and overwrite) bucket 'serverless-aws-docsify' configuration
+Serverless: - Set (and overwrite) bucket 'serverless-aws-docsify' bucket policy
+Serverless: - Set (and overwrite) bucket 'serverless-aws-docsify' CORS policy
+? Do you want to proceed? true
+Serverless: Looking for bucket...
+Serverless: Bucket found...
+Serverless: Deleting all objects from bucket...
+Serverless: Configuring bucket...
+Serverless: Configuring policy for bucket...
+Serverless: Retaining existing tags...
+Serverless: Configuring CORS for bucket...
+Serverless: Uploading client files to bucket...
+Serverless: Success! Your site should be available at http://serverless-aws-docsify.s3-website-us-east-1.amazonaws.com/
+corhyam@Ccc-MacBook-Pro aws-serverless-docsify % tree
+.
+├── client
+│   └── dist
+│       ├── README.md
+│       └── index.html
+└── serverless.yml
+
+2 directories, 3 files
+
+```
+
+>http://serverless-aws-docsify.s3-website-us-east-1.amazonaws.com/ 即为docsify文档托管域名，最好是使用自己域名，根据自己的需求，把该CNAME加入到域名解析。
+
+!> 如部署期间遇到问题可留言。**本人目前能力尚浅，如有错误之处，还请予指正。**
 
