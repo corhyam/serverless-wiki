@@ -54,7 +54,7 @@
 
 ![image-20210401015522033](_images/image-20210401015522033.png)
 
-以上为最近的一些交付记录，Jenkins接受github发出的`POST`d请求后，就会触发构建。
+以上为最近的一些交付记录，Jenkins接受github发出的`POST`请求后，就会触发构建。
 
 
 

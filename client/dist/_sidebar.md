@@ -4,6 +4,11 @@
   - [Serverless适用于哪些场景](scene.md)
   - [Serverless存在什么问题](demerit.md)
   
+- Docsify
+  - [docsify是什么](what-is-docsify.md)
+  - [为什么选择docsify](whyichooseit.md)
+  - [Serverless Framework快速部署上云](quickstart.md)
+  
 - 系统概述
   - [AWS云上资源](aws-resource.md)
   - [Wiki系统实现功能](Wiki-func.md)
@@ -22,12 +27,7 @@
   - [Lambda自定义授权调试](authorization-debug.md)
   - [使用Docker安装Jenkins](jenkins.md)
   - [Jenkins实现静态代码CI/CD](jenkins-cicd.md)
-  
-- Docsify
-  - [为什么选择docsify](whyichooseit.md)
-  - [初始化](init.md)
-  - [多页文档](multipage.md)
-  
+
 - Auth0的踩坑经历
   - [OIDC与OAUTH2.0](oidcAndOAuth.md)
   - [Auth0是什么](whatisAuth0.md)
