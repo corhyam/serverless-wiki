@@ -65,7 +65,9 @@ Serverless架构让人们不再操心运行所需的资源，只需关注自己�
 
 Serverless代表无服务器计算技术崛起， 是微服务的一种表现形式，是新一代云服务和开发架构的实践，是云计算发展重点方向之一。Serverless架构是BaaS实现的精髓，是BaaS进一步的解读，FaaS（Function as a service)是BaaS中云代码的实现方式。作为使用方我们不仅熟悉业内Serverless架构的经典产品，而且需要进行学习进而开发属于自己Serverless产品，或者能够很好的进行选型为自己产品快速的开发与运营提供基础条件。
 
-摘录自：https://blog.csdn.net/cc18868876837/article/details/90672971
+摘录自：
+
+https://blog.csdn.net/zl1zl2zl3/article/details/104610736/
 
 https://cloud.tencent.com/developer/article/1080689
 

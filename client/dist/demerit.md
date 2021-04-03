@@ -27,6 +27,7 @@ Serverless 很便宜，但是这并不意味着它很简单。AWS Lambda的 Clou
 ---
 
 ## 5.5 安全问题
+摘录自：https://www.codercto.com/a/92411.html
 
 运行无服务器功能的服务器为无数客户运行它们，这会引发许多安全问题。ZDNet列出了 [与无服务器计算相关的10种潜在安全风险](https://www.zdnet.com/article/the-top-10-risks-for-apps-on-serverless-architectures/)，其中包括：
 

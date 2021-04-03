@@ -5,14 +5,14 @@
 
 由于该EC2服务器在us-east-1,所以不需要配置国内的docker-ce软件源
 直接使用命令
-```shell script
+```shell
 yum install -y docker
 service docker start 
 ```
 还可以使用国内`Daocloud`的一键安装脚本。
 
 如果是云服务器，当前AWS以及阿里云自研的linux镜像应该没包含在该脚本中，所以使用该脚本需要是Centos，Ubuntu一类的传统的操作系统。
-```
+```shell
 curl -sSL https://get.daocloud.io/docker | sh
 ```
 ## 拉取Jenkins镜像

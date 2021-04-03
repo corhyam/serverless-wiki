@@ -1,12 +1,6 @@
 
 service: auth0-service-test-outdated
 
-plugins:
-  - serverless-finch
-
-custom:
-  client:
-    bucketName: auth0.corhyam.xyz
 
 provider:
   name: aws
