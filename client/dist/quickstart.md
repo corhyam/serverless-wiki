@@ -10,7 +10,7 @@ npm i docsify-cli -g
 
 
 
-项目初始化
+**项目初始化**
 
 ```bash
 docsify init client/dist
@@ -235,5 +235,16 @@ corhyam@Ccc-MacBook-Pro aws-serverless-docsify % tree
 
 >http://serverless-aws-docsify.s3-website-us-east-1.amazonaws.com/ 即为docsify文档托管域名，最好是使用自己域名，根据自己的需求，把该CNAME加入到域名解析。
 
-!> 如部署期间遇到问题可留言。**本人目前能力尚浅，如有错误之处，还请予指正。**
+---
 
+---
+
+
+
+> 后续更新文档可以再次运行`serverless client deploy`以实现文档更新，但是若嫌麻烦，则可以如本人的做法，使用使用jenkins做自动构建。当你代码提交至github，通过github-webhook，让Jenkins进行构建。
+
+> :point_right:  ​[Jenkins实现简单ci/cd](jenkins-cicd.md)
+
+![cicd architecture](_images/cicd-architeture.png)
+
+!> 如部署期间遇到问题可留言。**本人目前能力尚浅，如有错误之处，还请予指正。**
