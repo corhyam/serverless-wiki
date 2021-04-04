@@ -23,8 +23,7 @@
   - [Serverless Framework部署云上资源](serverless-deploy.md)
   - [Auth0注册与集成](auth0-register.md)
   - [Auth0与AWS lambda集成](auth0-intergration.md)
-  - [API gateway的创建与设置](api-create.md)
-  - [AWS Lambda函数实现](lambda-implement.md)
+  - [API gateway的创建与设置](create-apigateway.md)
   - [Lambda自定义授权调试](authorization-debug.md)
   - [使用Docker安装Jenkins](jenkins.md)
   - [Jenkins实现静态代码CI/CD](jenkins-cicd.md)
@@ -32,7 +31,6 @@
 - Auth0的踩坑经历📌
   - [OIDC与OAUTH2.0](oidc-And-OAuth.md)
   - [Auth0是什么](what-is-Auth0.md)
-  - [注册auth0](create-Auth0.md)
   
 - 另一身份云Authing📙
   - [Authing是什么](authing.md)

@@ -10,4 +10,4 @@
 - 阿里云 DNS云解析
 
 [GitHub](https://github.com/corhyam)
-[Get Started](README.md)
+[Getting Started](README.md)
