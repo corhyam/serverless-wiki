@@ -28,7 +28,7 @@
       loadNavbar:true,
       subMaxLevel: 2,
       coverpage: true,
-      mergeNavbar: true,//小屏合并导航栏到sidebar
+/*      mergeNavbar: true,//小屏合并导航栏到sidebar*/
       notFoundPage: true,
       topMargin: 90,
       // subMaxLevel: 2,
@@ -47,7 +47,13 @@
                 null,
                 '[Edit on Github]'
         )
-      ]
+      ],
+      count:{
+        countable:true,
+        fontsize:'0.9em',
+        color:'rgb(80,20,90)',
+        language:'chinese'
+      }
     }
   </script>
 
@@ -66,6 +72,8 @@
     })
   </script>
 
+
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script><!--add Copy to Clipboard添加复制到剪贴板-->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script><!--点击图片放大缩小-->
@@ -74,6 +82,7 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-markdown.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify-plugin-carbon@1/index.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-plugin-carbon@1/index.min.js"></script>
 </body>
 </html>
