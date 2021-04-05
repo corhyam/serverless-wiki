@@ -52,14 +52,33 @@ Lambda函数可以按计划运行，这使它们对重复任务有效，例如�
 
 ## 1.6、 机器人与技巧
 
-Lambda函数和无服务器技术的另一种流行用法是为诸如Slack（一种流行的聊天系统，[https](https://slack.com/)：//slack.com）之类的服务构建机器人（*机器人*是运行自动化任务的应用或脚本）。为Slack开发的机器人可以响应命令，执行小任务以及发送报告和通知。例如，我们在Lambda中构建了一个Slack机器人，以报告通过我们的教育平台每天进行的在线销售数量。我们已经看到开发人员为Telegram，Skype和Facebook的Messenger平台构建了机器人。
+Lambda函数和无服务器技术的另一种流行用法是为诸如Slack（一种流行的聊天系统，[https://slack.com](https://slack.com/)）之类的服务构建机器人（*机器人*是运行自动化任务的应用或脚本）。为Slack开发的机器人可以响应命令，执行小任务以及发送报告和通知。例如，我们在Lambda中构建了一个Slack机器人，以报告通过我们的教育平台每天进行的在线销售数量。我们已经看到开发人员为Telegram，Skype和Facebook的Messenger平台构建了机器人。
 
-同样，开发人员编写Lambda函数来增强Amazon Echo技能。Amazon Echo是一款免提扬声器，可响应语音命令。开发人员可以实施*技能*以进一步扩展Echo的功能（该技能本质上是一种可以响应人的声音的应用程序；有关更多信息，请参见http://amzn.to/2b5NMFj）。您可以编写技巧来订购披萨或在地理上测验自己。Amazon Echo完全由语音驱动，而*技能*由Lambda驱动。
+同样，开发人员编写Lambda函数来增强Amazon Echo技能。Amazon Echo是一款免提扬声器，可响应语音命令。开发人员可以实施*技能*以进一步扩展Echo的功能（该技能本质上是一种可以响应人的声音的应用程序）您可以编写技巧来订购披萨或在地理上测验自己。Amazon Echo完全由语音驱动，而*技能*由Lambda驱动。
 
+---
 
+## acloud.guru简化架构
 
 ![image acloud-guru](_images/acloud-guru.png)
 
 <center>图为acloud.guru的架构</center>
 
-Acloud.guru是一个学习AWS解决方案的网站，最初了解AWS也是从该网站开始做学习。网站功能包括视频课程，联系测试以及论坛讨论等。
+**acloud.guru**是一个学习AWS解决方案的网站，最初本人了解AWS也是从该网站开始的。网站功能包括视频课程，联系测试以及论坛讨论等。
+
+从架构图来看的话看出：
+
+- 使用`Auth0`做认证授权。
+- `Netlify`做静态网站托管。
+- `CloudFront `做 CDN 。
+- `S3 `做静态文件存储
+- `API Gateway` 做统一入口
+- `Firebase`做后端数据库
+- `CloudSearch `做搜索引擎
+
+> 媒体转码操作 大致是：上传文件至S3（S3做为触发器）-> `Lambda`转码 -> 存储到数据库`Firebase`
+>
+> 论坛，问题提交，通过`Lambda`函数做后端处理，将数据添加到搜索引擎以及数据库中。
+>
+> 文件上传下载以及阅读，通过一些`策略`来控制许可，上传或从`Firebase`下载。
+
