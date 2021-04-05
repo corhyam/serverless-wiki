@@ -16,7 +16,7 @@ npm i docsify-cli -g
 docsify init client/dist
 ```
 
-**文件路径`./docs`可以根据你自己的选择做修改**
+**文件路径可以根据你自己的选择做修改，但建议使用`client/dist`，后续就不用去`serverless。yml`做配置**
 
 ---
 
@@ -48,7 +48,7 @@ docsify serve client/dist
 
 ## 安装Serverless Framework
 
-> **本文主要展示为使用Serverless Framework部署docsify至`AWS`。**
+> **本文主要展示为使用`Serverless Framework`部署`docsify`至`AWS`。**
 
 !> 其余云平台如何配置可以根据[Serverless官网](https://www.serverless.com/)中的文档进行修改。由于国内Serverless Framework与`腾讯云`之间有合作，并且时区不同，所以Serverless Framework安装之后默认是使用腾讯云的，**如果有腾讯云账号，腾讯云有一个解决方案是使用Serverless Component，使用component腾讯云是能够最快实现部署的，不需要做其他的配置，编写Serverless.yml即可立即部署。**
 
@@ -148,12 +148,12 @@ touch serverless.yml
 
 将以下内容填入到serverless.yml中
 
-```
+```yaml
 service: docsify-test
 
 plugins:
   - serverless-finch
-#client 网站部署plugins
+#网站部署plugins
 
 custom:
   client:
@@ -161,7 +161,6 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs12.x
 ```
 
 > **其中`service`为服务名，`bucketName`根据自己的需求进行修改**
