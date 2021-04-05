@@ -1,5 +1,5 @@
 
-![logo](_icon/icon2.svg)
+![logo](_icon/coupon.svg)
 
 #  Corhyam's Wiki
 
