@@ -16,8 +16,6 @@
   - [Jenkins-Github自动部署](jenkins-github.md)
   
 - 实现过程🔖
-  <!-- - [实现过程问题自述](implement-problem.md)-->
-  
   - [Docsify文档构建](docsify-build.md)
   - [Serverless Framework安装调试](serverless-install.md)
   - [Serverless Framework部署云上资源](serverless-deploy.md)
@@ -29,13 +27,17 @@
   - [Jenkins实现静态代码CI/CD](jenkins-cicd.md)
   
 - Auth0的踩坑经历📌
-  - [OIDC与OAUTH2.0](oidc-And-OAuth.md)
   - [Auth0是什么](what-is-Auth0.md)
+  - [集成Auth0与其他踩坑经历](auth0-adventure.md)
+  - [OIDC与OAUTH2.0](oidc-And-OAuth.md)
   
+
+<!--
+
 - 另一身份云Authing📙
   - [Authing是什么](authing.md)
   - [Authing与auth0的使用感受](authingandauth0.md)
-  
+-->
   
 
   

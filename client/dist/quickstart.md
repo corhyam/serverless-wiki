@@ -247,7 +247,7 @@ corhyam@Ccc-MacBook-Pro aws-serverless-docsify % tree
 
 ![cicd architecture](_images/cicd-architeture.png)
 
-!> 如部署期间遇到问题可留言。转载请标明出处。
+!> 如部署期间遇到问题欢迎留言讨论。转载请标明出处。
 
 > **如有错误之处，还请予指正。**
 
