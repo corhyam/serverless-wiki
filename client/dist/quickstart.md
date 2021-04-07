@@ -240,7 +240,7 @@ corhyam@Ccc-MacBook-Pro aws-serverless-docsify % tree
 
 
 
-> 后续更新文档可以再次运行`serverless client deploy`以实现文档更新，但是若嫌麻烦，则可以如本人的做法，使用使用jenkins做自动构建。当你代码提交至github，通过github-webhook，让Jenkins进行构建。
+> 后续更新文档可以再次运行`serverless client deploy`以实现文档更新，但是若嫌麻烦，还可尝试使用`github actions`对静态文档进行推送。由于本人AWS账号为Educate账号有所限制，所以做法有所不同，但是该做法同样也适用于AWS基本账号。引用jenkins做自动构建。当你代码提交至github后，通过github-webhook，让Jenkins进行构建。
 
 > :point_right:  ​[Jenkins实现简单ci/cd](jenkins-cicd.md)
 
