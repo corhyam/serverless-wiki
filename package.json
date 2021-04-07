@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "gitalk": "^1.7.2",
-    "serverless-finch": "^1.1.1"
+    "serverless-finch": "^1.1.1",
+    "sweetalert": "^2.1.2"
   }
 }

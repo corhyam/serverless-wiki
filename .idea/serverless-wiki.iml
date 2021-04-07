@@ -13,5 +13,6 @@
     <orderEntry type="library" name="search" level="application" />
     <orderEntry type="library" name="gitalk" level="application" />
     <orderEntry type="library" name="vue" level="application" />
+    <orderEntry type="library" name="sweetalert" level="application" />
   </component>
 </module>
