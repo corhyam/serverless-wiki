@@ -55,8 +55,16 @@
         fontsize:'0.9em',
         color:'rgb(80,20,90)',
         language:'chinese'
-      }
-
+      },
+      footer: {
+        copy: '<span>Copyright &copy; 2020</span>',
+        auth: '<strong>by Corhyam<strong><br>' +
+                ' 👀本站总访问量：<span id="busuanzi_value_site_pv"></span>次<br>' +
+                ' 👀本站访客数：<span id="busuanzi_value_site_uv"></span>人次\<br>' ,
+        pre: '<hr/>',
+        style: 'text-align: right;',
+        class: 'className',
+      },
     }
   </script>
 
@@ -84,13 +92,21 @@
             "success"); };
 </script>
 
+<!--page view-->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--footer-->
+<script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
 
 <!--<script src="library/docsify.js"></script>--><!--以防万一,怕cdn出问题-->
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script><!--add Copy to Clipboard添加复制到剪贴板-->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script><!--点击图片放大缩小-->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script> <!--引入搜索栏js-->
+<!--add Copy to Clipboard添加复制到剪贴板-->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+<!--点击图片放大缩小-->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+<!--引入搜索栏js-->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
