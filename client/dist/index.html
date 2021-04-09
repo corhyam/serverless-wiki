@@ -11,7 +11,7 @@
   <link rel="shortcut icon" href="_icon/favicon.ico">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
   <!-- alert -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/sweetalert.min.css" type='text/css' media='all' />
+  <link rel="stylesheet" href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" type="text/css" media="all">
   <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
   <!--百度站点收录-->
   <meta name="baidu-site-verification" content="code-OpllUqAfsD" />
@@ -53,18 +53,40 @@
                 '[Edit on Github]'
         )
       ],
+        plugins: [
+          function(hook) {
+            var footer = [
+              '<hr/>',
+              '<footer>',
+              '<span>Copyright &copy;2021 by 📭<a href="https://github.com/Corhyam"><strong>Corhyam</strong></a>. </span>',
+              '<span>Published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.<br><br></span>',
+              'This work is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC-SA 4.0</a>.<br><br>',
+              '转载请保留链接并申明来源<a rel="actor" href="https://github.com/corhyam">📭 Corhyam</a>.',
+/*                    '<span id="busuanzi_container_site_pv" style=\'display:none\'>\n' +
+                    '    本站总访问量<span id="busuanzi_value_site_pv"></span>次|\n' +
+                    '    👀本站访客数：<span id="busuanzi_value_site_uv"></span>人次<br>\n' +
+                    '</span>',*/
+              '</footer>'
+            ].join('');
+
+            hook.afterEach(function(html) {
+              return html + footer;
+            });
+          }
+        ],
+
       count:{
         countable:true,
         fontsize:'0.9em',
         color:'rgb(80,20,90)',
         language:'chinese'
       },
-      footer: {
+     /* footer: {
         copy: '<span>Copyright &copy; 2021 by 📭',
         auth: ' <a href="https://github.com/corhyam/" target="_blank"><strong>Corhyam<strong/></a> ' ,
         pre: '<hr/>',
         style: 'text-align: left;',
-      },
+      },*/
 /*      ' 👀本站总访问量：<span id="busuanzi_value_site_pv"></span>次<br>' +
               ' 👀本站访客数：<span id="busuanzi_value_site_uv"></span>人次\<br>'*/
     }
@@ -98,7 +120,7 @@
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <!--footer-->
-<script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
+<!--<script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>-->
 
 <!--<script src="library/docsify.js"></script>--><!--以防万一,怕cdn出问题-->
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
