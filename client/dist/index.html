@@ -46,14 +46,12 @@
 /*      alias: {
         '/.*!/_sidebar.md': '/_sidebar.md'
       },*/
-      plugins: [
-        EditOnGithubPlugin.create(
-                'https://github.com/corhyam/serverless-wiki/tree/master/client/dist/',
-                null,
-                '[Edit on Github]'
-        )
-      ],
         plugins: [
+          EditOnGithubPlugin.create(
+                  'https://github.com/corhyam/serverless-wiki/tree/master/client/dist/',
+                  null,
+                  '[Edit on Github]'
+          ),
           function(hook) {
             var footer = [
               '<hr/>',
