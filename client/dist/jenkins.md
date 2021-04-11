@@ -32,23 +32,26 @@ chown -R 1000:1000 /data/jenkins_home/
 ```
 
 ## 创建容器
-```shell script
+```shell
 docker run -d --name jenkins -p 8080:8080 -p 50000:50000 -v /data/jenkins_home:/var/jenkins_home jenkins/jenkins:2.222.3-centos
 ```
--d 标识是让 docker 容器在后台运行
---name 容器的名字
--p 8080:8080 端口映射
--p 50000:50000 端口映射 JNLP jenkins代理程序
--v /data/jenkins_home:/var/jenkins_home 挂载数据卷，/data/jenkins_home是本地创建的数据卷
-![jenkins container](_images/jenkins-image.png)
 
-##配置Jenkins
+- -d 标识是让 docker 容器在后台运行  
+- --name 容器的名字  
+- -p 8080:8080 端口映射
+- -p 50000:50000 端口映射 JNLP jenkins代理程序 
+- -v /data/jenkins_home:/var/jenkins_home 挂载数据卷，/data/jenkins_home是本地创建的数据卷
+
+> ![jenkins container](_images/jenkins-image.png)
+
+## 配置Jenkins
 使用浏览器访问`http://(your-domail):8080/` your-domail指你的ip或者是域名。  
 
-#输入初始管理员密码
+# 输入初始管理员密码
 ![jenkins install-1](_images/jenkins-install-1.png)
 此处要求输入初始的管理员密码，需要你去获取，图片的路径为容器中的路径，你可以通过docker命令获取也可以本地cat你挂载的存储卷去获取
-```shell script
+
+```bash
 docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 or
 cat /data/jenkins_home/secrets/initialAdminPassword
