@@ -15,6 +15,8 @@
 >
 >**由于本人造诣不深，仍在不断充实自己，文档仅用于记录一下该系统搭建过程中碰到的各种问题以及自己的学习过程，仅用于个人学习，如有错误之处或其他问题，还请予指正。**
 
+<br>
+
 **由于对云计算层面比较感兴趣，许多新兴技术应运而生。在接触到AWS Lambda与阿里云函数计算时，感觉Serverless技术较为有趣，故想尝试着搭建网站做做尝试。
 初次接触Serverless架构，架构的想法如下。**
 
@@ -32,6 +34,8 @@
 
 ---
 
+<br>
+
 # 快速部署
 
 ## 初始化docsify
@@ -44,7 +48,7 @@ npm i docsify-cli -g
 
 ---
 
-
+<br>
 
 **项目初始化**
 
@@ -55,6 +59,8 @@ docsify init client/dist
 **文件路径可以根据你自己的选择做修改，但建议使用`client/dist`，后续就不用去`serverless。yml`做配置**
 
 ---
+
+<br>
 
 **初始目录结构**
 
@@ -68,7 +74,7 @@ docsify init client/dist
 
 ---
 
-
+<br>
 
 ### 本地预览
 
@@ -80,19 +86,23 @@ docsify serve client/dist
 
 ---
 
-
+<br>
 
 ## 安装Serverless Framework
 
 > **本文主要展示为使用`Serverless Framework`部署`docsify`至`AWS`。**
 
-!> 其余云平台如何配置可以根据[Serverless官网](https://www.serverless.com/)中的文档进行修改。由于国内Serverless Framework与`腾讯云`之间有合作，并且时区不同，所以Serverless Framework安装之后默认是使用腾讯云的，**如果有腾讯云账号，腾讯云有一个解决方案是使用Serverless Component，使用component腾讯云是能够最快实现部署的，不需要做其他的配置，编写Serverless.yml即可立即部署。**
+<br>
 
-?> 由于在国内Serverless Framework文档较少，google也翻不到，在想要配置默认提供商为AWS，以及配置AWS凭证时便碰了几次壁。跑到stack overflow寻找，询问Serverless平台中的人才得以解决。
+> 其余云平台如何配置可以根据[Serverless官网](https://www.serverless.com/)中的文档进行修改。由于国内Serverless Framework与`腾讯云`之间有合作，并且时区不同，所以Serverless Framework安装之后默认是使用腾讯云的，**如果有腾讯云账号，腾讯云有一个解决方案是使用Serverless Component，使用component腾讯云是能够最快实现部署的，不需要做其他的配置，编写Serverless.yml即可立即部署。**
+
+<br>  
+
+> 由于在国内Serverless Framework文档较少，google也翻不到，在想要配置默认提供商为AWS，以及配置AWS凭证时便碰了几次壁。跑到stack overflow寻找，询问Serverless平台中的人才得以解决。
 
 ---
 
-
+<br>
 
 **安装Serverless Framework**
 
@@ -103,6 +113,8 @@ npm install -g serverless
 **修改默认提供商(重要)**
 
 > 不修改平台提供商则默认时`腾讯云`，某些命令反馈的情况也不相同。
+
+<br>
 
  **修改环境变量**
 
@@ -130,7 +142,7 @@ serverless -v
 
 ---
 
-
+<br>
 
 ## 设置AWS凭证
 
@@ -158,11 +170,11 @@ aws_session_token=FwoGZXIvYXdzEHQaDO3UKi03vjqW71YdlyLCARsCGafzixZWyZrZe/FmwC/SnH
 "~/.aws/credentials" [noeol] 4L, 498C
 ```
 
-!> **由于此处本人的AWS账号为AWS educate账号，提供的是临时凭证，需要有session_token。**
+> **由于此处本人的AWS账号为AWS educate账号，提供的是临时凭证，需要有session_token。**
 
-!> **所以建议在IAM中创建AWS用户，附加需要的策略，创建用户后保存对应的AK/SK**
+> **所以建议在IAM中创建AWS用户，附加需要的策略，创建用户后保存对应的AK/SK**
 
-
+<br>
 
 ---
 
@@ -209,11 +221,13 @@ serverless client deploy
 
 即可部署至aws s3存储桶中，返回的域名即为静态网站托管的域名。
 
----
+<br>
 
 ---
 
 ---
+
+
 
 
 
