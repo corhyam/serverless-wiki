@@ -1,11 +1,12 @@
 <p align="center">
   <a href="http://corhyam.xyz">
-    <img alt="icon" src="client/dist/_icon/coupon.svg">
+    <img alt="icon" src="https://s3.amazonaws.com/corhyam.xyz/_icon/coupon.svg">
   </a>
 </p>
 <p align="center">
    <strong>基于Serverless Framework快速部署docsify上云</strong>
 </p>
+
 
 ---
 
