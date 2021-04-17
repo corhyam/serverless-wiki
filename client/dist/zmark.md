@@ -34,3 +34,40 @@ K8S 在微服务架构下做服务注册中心的一种思路
 
 摘录自：https://blog.csdn.net/itguangit/article/details/109731971
 
+knative：
+
+https://www.bookstack.cn/read/serverless-handbook/knative-primer-overview.md
+
+https://zhuanlan.zhihu.com/p/139671487
+
+
+
+不难看出，「无服务器」并不是真的没有服务器，而是由云计算厂商将管理服务器的繁杂事务自动化，为用户提供更贴近业务的接口，让用户可以更快速地进行业务的探索和创新。
+
+此外，云计算的弹性资源池，以及以微虚拟机为单位的资源划分和占用，也让用户可以享受到云计算的最大优势：按需使用，按需付费。
+
+从技术层面来说，Lambda 等无服务器计算服务，实际采用的就是已经很成熟的容器技术。只是 Lambda 使用了 AWS 自研的 Firecracker 技术，更快速并且更安全。
+
+https://zhuanlan.zhihu.com/p/106513886
+
+
+
+jenkins持续集成
+
+https://www.liaoxuefeng.com/article/1083282007018592
+
+https://blog.csdn.net/qq_35368183/article/details/84558134?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-3.control&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-3.control
+
+
+
+工厂里的装配线以快速、自动化、可重复的方式从原材料生产出消费品。同样，软件交付管道以快速、自动化和可重复的方式从源代码生成发布版本。如何完成这项工作的总体设计称为“持续交付”（CD）。启动装配线的过程称为“持续集成”（CI）。确保质量的过程称为“持续测试”，将最终产品提供给用户的过程称为“持续部署”。一些专家让这一切简单、顺畅、高效地运行，这些人被称为 运维开发(DevOps)践行者。
+https://blog.csdn.net/ichen820/article/details/115211978
+
+https://blog.csdn.net/weixin_34037515/article/details/92258572  细看 持续集成步骤。
+
+
+
+Serverless架构演变
+
+https://www.jianshu.com/p/09e36a6dc503
+
