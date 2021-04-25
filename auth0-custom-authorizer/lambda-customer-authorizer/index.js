@@ -33,7 +33,7 @@ exports.handler = function(event, context, callback){
         if(err){
             console.log('Failed jwt verification: ', err, 'auth: ', event.authorizationToken);
             callback('Authorization Failed');
-        } else {//判断令牌是否有效 有git效就返回个策略
+        } else {//判断令牌是否有效 有就返回策略
             callback(null, generatePolicy('user', 'allow', event.methodArn));
         }
     })
