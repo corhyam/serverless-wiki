@@ -438,3 +438,14 @@ DTS数据迁移操作：先进行准备工作，对源数据库或目标数据�
 创建数据迁移的任务，测试源数据库以及目标数据库的连接。然后查看迁移进度，业务转换，最后结束数据迁移任务。
 
 服务器迁移中心（Server Migration Center，简称SMC）是阿里云自主研发的迁移平台。使用SMC，可将您的单台或多台迁移源迁移至阿里云。迁移源（或源服务器）概指您的待迁移IDC服务器、虚拟机、其他云平台的云主机或其他类型的服务器。
+
+NAT（network Address translation）
+SNAT（source）和DNAT（destination）
+统一对外的公网出口 统一对内的公网入口
+
+将局域网里的内部地主之转换成公网上合法的IP地址，让内部地址也能像有公网地址的主机一样上网，优于代理服务器，能做直接访问外部IP地址，但NAT往往会过滤掉部分的UDP数据包
+
+https://blog.csdn.net/lasoup/article/details/78289735?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param
+SNAT是指在数据包从网卡发送出去的时候，把数据包中的源地址部分替换为指定的IP，这样，接收方就认为数据包的来源是被替换的那个IP的主机
+ 
+DNAT，就是指数据包从网卡发送出去的时候，修改数据包中的目的IP，表现为如果你想访问A，可是因为网关做了DNAT，把所有访问A的数据包的目的IP全部修改为B，那么，你实际上访问的是B
