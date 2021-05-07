@@ -487,3 +487,17 @@ WAF搭配cdn使用（SLB的ip）
 配置页面中，WAF前是否有七层代理（高防/CDN）选择为是
 复制生成的CNAME
 在CDN中选择源站域名，并把CNAME复制到域名处 复制CDN生成的CNAME，打开云解析DNS,再把刚才生成的CNAME记录写入记录值中。
+
+ipsec，是一个协议包，通过对IP协议的分组进行加密和认证来保护IP协议的网络传输协议族（一些相互关联的协议的集合）。
+IPsec VPN指采用IPSec协议来实现远程接入的一种VPN技术，IPSec全称为Internet Protocol Security，是由Internet Engineering Task Force (IETF) 定义的安全标准框架，在公网上为两个私有网络提供安全通信通道,通过加密通道保证连接的安全——在两个公共网关间提供私密数据封包服务
+
+
+云防火墙是偏向网络层面的 网络微隔离和访问控制
+waf是偏向应用层的 web层面，类似sql注入 xss跨站脚本
+
+云防火墙
+是公共云环境下的SAAS化防火墙，可统一管理互联网到业务的访问控制策略（南北向）和业务与业务之间的微隔离策略（东西向）。内置的威胁入侵检测模块（IPS）支持全网流量可视和业务间访问关系可视，是您业务上云的第一个网络安全基础设施。
+
+云防火墙可以防护一下云资产或流量：
+互联网方向：ECS公网IP、slb的EIP、
+SLB公网IP（详细见下图）、HAVIP、eip、ecs eip、eni eip、nat eip（主要是EIP）
