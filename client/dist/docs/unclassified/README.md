@@ -513,3 +513,17 @@ https://help.aliyun.com/document_detail/102385.html?spm=a2c4g.11186623.6.626.2e2
 
 功能特性：
 能够弱口令检测，web注入漏洞，文件包含漏洞，前端漏洞，错误配置，信息泄露
+
+10.13
+
+VPN网关
+阿里云vpn网关提供IPsec-VPN和SSL-VPN功能
+IPsec-VPN
+基于路由的IPsec-VPN，不仅可以更方便配置和维护VPN策略，而且还提供灵活的流量路由方式。
+可以使用IPsec-VPN功能把本地数据中心与VPC或不同的VPC之间进行连接.只要支持IKEv1和IKEV2协议的设备都可以和阿里云vpn网关互连。
+SSL-VPN
+基于OpenVPN架构，可以使用SSL-VPN功能从客户端远程接入VPC中部署的应用和服务，部署完成之后，您仅需要在客户端中加载证书发起连接，即可实现远程接入。
+
+使用场景：
+通过IPsec-VPN将IDC和PVC快速连接起来，构建混合云。
+IPsec-VPN基于路由，不仅可以更方便 的配置和维护vpn，还提供了灵活的流量路由方式。
