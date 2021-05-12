@@ -527,3 +527,12 @@ SSL-VPN
 使用场景：
 通过IPsec-VPN将IDC和PVC快速连接起来，构建混合云。
 IPsec-VPN基于路由，不仅可以更方便 的配置和维护vpn，还提供了灵活的流量路由方式。
+
+VPC与本地数据中心的连接步骤：
+1、创建VPN网关，在控制台中进行创建，填写实例名称，网关的地域，VPC，以及启用哪一种VPN功能。
+2、创建用户网关，输入用户的名称，IP地址（本地数据中心网管设备的公网ip）以及相关描述。
+3、创建IPsec连接页面，选择地域，配置，选择VPN gateway，用户gateway，本段网段，对端网段，以及共享密钥。
+4、在本地网关设备中加载VPN配置。（注意本地网关设备的角度来看，LocalSubnet是指IDC而不是我们角度的vpc）
+5、配置VPN网关路由，在目的路由表页签中，添加路由条目，添加目标网段（IDC的私网网段），下一跳 选择IPsec连接实例，发布到VPC中。
+6、测试访问，用无公网的ECSping本地数据中心私网IP
+https://help.aliyun.com/document_detail/65072.html?spm=a2c4g.11186623.2.11.1eb014dcasyF24#concept-c4h-slz-wdb
