@@ -85,3 +85,9 @@ https://www.jianshu.com/p/09e36a6dc503
 用privilege方式的话就是话真root 少用 容易出现权限过载。
 kernel capability
 所以就会用到—cap-add去添加一些权限 
+
+在Kubernetes集群中的每个Node上都会运行一个Kube-proxy服务进程,每个kube-proxy都充当一个负载均衡器,这是一个分布式的负载均衡器,我们可以把这个进程看作是透明代理兼负载均衡器,核心功能就是将访问到某个Service的请求转发到该Service对应的真实后端Pod上.
+Service的ClusterIP和NodePort的实现方式都是kube-proxy服务通过iptables的NAT转换实现的
+service和ingress
+https://zhuanlan.zhihu.com/p/88304095
+Service端口接收客户端请求并将其转发至后端的Pod。这种代理机制称为"端口代理"或者四层代理，工作于TCP/IP协议栈的传输层。Service对象的IP地址称为Cluster IP，它是一种虚拟IP，能够被同一集群中的Pod资源所访问。
