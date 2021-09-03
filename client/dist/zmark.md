@@ -91,3 +91,11 @@ Service的ClusterIP和NodePort的实现方式都是kube-proxy服务通过iptable
 service和ingress
 https://zhuanlan.zhihu.com/p/88304095
 Service端口接收客户端请求并将其转发至后端的Pod。这种代理机制称为"端口代理"或者四层代理，工作于TCP/IP协议栈的传输层。Service对象的IP地址称为Cluster IP，它是一种虚拟IP，能够被同一集群中的Pod资源所访问。
+
+六个独立名称空间隔离出来的隔离环境
+mount是根文件系统
+IPC通信隔离。进程间通信 （interprocess community，进程间通信）
+NETWORK网络隔离 各自的协议栈路由表
+UTS主机名和域名隔离  UNIX Time-sharing System
+PID进程隔离 1号和2号进程隔离
+USER每一个用户空间都有自己的用户和UID的映射
